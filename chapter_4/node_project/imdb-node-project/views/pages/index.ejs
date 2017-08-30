@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">        
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center">Movie Database</h1>
+
+             <% for (let i = 0; i < movies.length; i++){ %>
+
+            <a class="movie-link" href=<%= "http://localhost:8080/pages/movie/" + movies[i].id %>>
+            <div class="media movie-list-item">
+                <div class="media-left">
+                    <div class="poster-container">
+                         <img class="media-object movie-poster" src=<%= movies[i].poster %> />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%= movies[i].title %>
+                        <span class="badge"><%= movies[i].imdbRating %></span>
+                    </h4>
+                    <div>
+                        <% /* movies[i].plot */ %>
+                    </div>
+                    <div class="released-date">
+                        Released: <%= movies[i].released %>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <% } %>
+
+        </div>
+    </body>
+</html>
+
